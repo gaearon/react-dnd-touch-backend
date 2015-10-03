@@ -1,0 +1,43 @@
+<!--
+/**
+ * Copyright 2015, Yahoo Inc.
+ * Copyrights licensed under the MIT License. See the accompanying LICENSE file for terms.
+ */
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            * {
+                box-sizing: border-box;
+            }
+            .list {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+            }
+
+            .list .item {
+                padding: 20px;
+                border: 1px solid black;
+            }
+
+            .list .item.is-over {
+                border: 1px solid red;
+            }
+
+            .list .item.preview {
+                opacity: 0.8;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main"></div>
+        <script type="text/javascript" src="./main.browserified.js"></script>
+    </body>
+</html>
