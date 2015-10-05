@@ -4,6 +4,7 @@
   "description": "Touch backend for react-dnd",
   "main": "dist/Touch.js",
   "scripts": {
+    "prepublish": "gulp dist",
     "test": "gulp lint"
   },
   "repository": {
