@@ -3,10 +3,8 @@
 # react-dnd-touch-backend
 
 [![npm version](https://badge.fury.io/js/react-dnd-touch-backend.svg)](http://badge.fury.io/js/react-dnd-touch-backend)
-[![Build Status](https://travis-ci.org/yahoo/react-dnd-touch-backend.svg?branch=master)](https://travis-ci.org/yahoo/react-dnd-touch-backend)
 [![Dependency Status](https://david-dm.org/yahoo/react-dnd-touch-backend.svg)](https://david-dm.org/yahoo/react-dnd-touch-backend)
 [![devDependency Status](https://david-dm.org/yahoo/react-dnd-touch-backend/dev-status.svg)](https://david-dm.org/yahoo/react-dnd-touch-backend#info=devDependencies)
-[![Coverage Status](https://coveralls.io/repos/yahoo/react-dnd-touch-backend/badge.svg)](https://coveralls.io/r/yahoo/react-dnd-touch-backend)
 
 Touch Backend for [react-dnd](https://github.com/gaearon/react-dnd)
 
