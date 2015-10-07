@@ -12,6 +12,7 @@ import DragLayer from 'react-dnd/modules/DragLayer';
 function collect (monitor) {
     var item = monitor.getItem();
     return {
+        id: item && item.id,
         name: item && item.name,
         currentOffset: monitor.getSourceClientOffset(),
         isDragging: monitor.isDragging()
@@ -41,6 +42,7 @@ export const ItemPreview = React.createClass({
     displayName: 'ItemPreview',
     mixins: [PureRenderMixin],
     propTypes: {
+        id: React.PropTypes.string,
         name: React.PropTypes.string,
         currentOffset: React.PropTypes.shape({
             x: React.PropTypes.number,
@@ -58,7 +60,7 @@ export const ItemPreview = React.createClass({
                 className="item preview"
                 style={getItemStyles(this.props.currentOffset)}
             >
-                {this.props.name}
+                {this.props.id} {this.props.name}
             </li>
         );
     }
