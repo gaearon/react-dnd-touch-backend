@@ -5,7 +5,7 @@
   "main": "dist/Touch.js",
   "scripts": {
     "prepublish": "gulp dist",
-    "test": "gulp lint"
+    "test": "gulp dist-example && node_modules/.bin/protractor tests/func/conf.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,8 @@
     "babel-eslint": "^4.1.3",
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
     "classnames": "^2.1.5",
     "del": "^2.0.2",
     "eslint-plugin-react": "^3.5.1",
@@ -40,9 +42,14 @@
     "gulp-babel": "^5.2.1",
     "gulp-eslint": "^1.0.0",
     "gulp-util": "^3.0.6",
+    "http-server": "^0.8.5",
     "immutable": "^3.7.5",
+    "mocha": "^2.3.3",
+    "protractor": "^2.4.0",
     "react": "^0.13.3",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.4.0"
+    "watchify": "^3.4.0",
+    "wd": "^0.3.12",
+    "wd-bridge": "0.0.2"
   }
 }

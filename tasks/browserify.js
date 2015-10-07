@@ -19,18 +19,30 @@ function rebundle (bundle, opts) {
         .on('end', opts.onEnd || Function.prototype);
 }
 
+function getBundler (opts) {
+    return browserify({
+        ...opts,
+        debug: true
+    })
+    .transform(babelify)
+}
+
 export default function dev (opts = {}) {
-    const { src, destFilename, destFolder } = opts;
+    const { src, destFilename, destFolder, watch } = opts;
 
     return () => {
-        const bundler = watchify(
-            browserify({
-                ...watchify.args,
-                entries: src,
-                debug: true
-            })
-            .transform(babelify)
-        );
+        let bundler;
+
+        if (watch) {
+            bundler = watchify(
+                getBundler({
+                    ...watchify.args,
+                    entries: src
+                })
+            );
+        } else {
+            bundler = getBundler({ entries: src });
+        }
 
         bundler.on('log', gutil.log);
 

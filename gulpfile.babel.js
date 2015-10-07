@@ -9,6 +9,12 @@ import babel from 'gulp-babel';
 import js from './tasks/browserify';
 import lint from './tasks/lint';
 
+const EXAMPLE_CONFIG = {
+    src: './examples/js/index.js',
+    destFilename: 'main.browserified.js',
+    destFolder: './examples/',
+};
+
 gulp.task('clean', () => {
     del.sync(['dist']);
     del.sync(['examples/*.browserified.js']);
@@ -18,11 +24,12 @@ gulp.task('clean', () => {
 gulp.task('lint', lint);
 
 // Compile example
-gulp.task('example', js({
-    src: './examples/js/index.js',
-    destFilename: 'main.browserified.js',
-    destFolder: './examples/'
+gulp.task('example-dev', js({
+    ...EXAMPLE_CONFIG,
+    watch: true
 }));
+
+gulp.task('example', js(EXAMPLE_CONFIG));
 
 // Compile scripts
 gulp.task('babel', () => {
@@ -31,7 +38,8 @@ gulp.task('babel', () => {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('dev', ['clean', 'lint', 'example']);
+gulp.task('dev', ['clean', 'lint', 'example-dev']);
+gulp.task('dist-example', ['clean', 'lint', 'example']);
 gulp.task('dist', ['lint', 'clean', 'babel']);
 
 gulp.task('default', ['dev']);
