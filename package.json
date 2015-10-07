@@ -5,7 +5,7 @@
   "main": "dist/Touch.js",
   "scripts": {
     "prepublish": "gulp dist",
-    "test": "gulp lint"
+    "test": "gulp clean lint"
   },
   "repository": {
     "type": "git",
